@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import api from '../api';
 import { Context } from '../Context/AuthContext';
 import { Table, Container, Button } from 'reactstrap';
-import './css/user.css';
+import './css/button.css';
 
 export default function User() {
   
@@ -45,8 +45,8 @@ export default function User() {
       </tbody>
       </Table>
 
-      <Button id="certificado" type="button">Cadastrar Certificado</Button>
-      <Button id="sair" type="button" onClick={handleLogout}>Sair</Button>
+      <a id="a-form" href="/certificate" type="button">Cadastrar Certificado</a>
+      <Button id="button-form" type="button" onClick={handleLogout}>Sair</Button>
     </Container>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Form, FormGroup, Label, Input, Container, Row } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
-import api from '../api'
+import api from '../api';
+import './css/button.css';
 
 export default function Register () {
 
@@ -29,10 +30,10 @@ export default function Register () {
     e.preventDefault();
     api.post('user-store', data)
       .then(function(response) {
-        console.log(response);
+        alert(response.data + ' | Status: ' + response.status);
       })
       .catch(function(error) {
-        console.log(error);
+        alert('Erro: ' + error.response.data.errorInfo[2] + ' | Status: ' + error.response.request.status);
       }
     );
   }

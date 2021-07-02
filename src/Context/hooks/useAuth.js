@@ -38,7 +38,7 @@ export default function useAuth() {
 
       })
       .catch(function (error) {
-        alert(error);
+        alert('Erro: ' + error.response.data.error + ' | Status: ' + error.response.status);
         history.push('/login');
       }
     );
