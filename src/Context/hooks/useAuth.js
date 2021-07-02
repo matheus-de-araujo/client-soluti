@@ -19,11 +19,11 @@ export default function useAuth() {
     setLoading(false);
   }, []);
   
-  async function handleLogin() {
+  async function handleLogin(email, password) {
     
     var auth = {
-      email: 'rodolfo@gmail.com',
-      password: '987654321'
+      email: email,
+      password: password
     }
     const data = await api.post('/login', auth);
     const token = data.data.token;
@@ -33,7 +33,7 @@ export default function useAuth() {
 
     setAuthenticated(true);
 
-    history.push('/user');
+    // history.push('/user');
   }
 
   function handleLogout() {
