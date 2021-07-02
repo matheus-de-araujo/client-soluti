@@ -1,12 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
-import { Context } from '../Context/AuthContext';
-import './css/login.css';
-import history from '../history';
-
-export default function Login() {
-  const { handleLogin } = useContext(Context);
+export default function Register () {
 
   const [data, setData] = useState({
     email: "",
@@ -14,18 +9,9 @@ export default function Login() {
   })
 
   function handleSubmit(e){
-    const newData = { ...data };
-    newData[e.target.id] = e.target.value;
-    setData(newData);
   }
 
   function submit(e){
-    e.preventDefault();
-    handleLogin(data.email, data.password);
-  }
-
-  function register() {
-    history.push('/register');
   }
 
   return(
@@ -41,7 +27,7 @@ export default function Login() {
         </FormGroup>
         <Button id="logar" >Logar</Button>
       </Form>
-      <Button id="register" onClick={register}>Cadastrar</Button>
+      <Button id="register">Cadastrar</Button>
     </Container>
   );
 }
