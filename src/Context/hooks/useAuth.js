@@ -8,23 +8,29 @@ export default function useAuth() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
 
-    // if (token) {
-    //   api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
-    //   setAuthenticated(true);
-    // }
+    if (token) {
+      api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
+      setAuthenticated(true);
+    }
 
     setLoading(false);
   }, []);
   
   async function handleLogin() {
-    const { data: { token } } = await api.get('/user/1');
+    var auth = {
+      email: 'rodolfo@gmail.com',
+      password: '987654321'
+    }
 
-    // localStorage.setItem('token', JSON.stringify(token));
+    const token = await api.post('/login', auth);
+
+    localStorage.setItem('token', JSON.stringify(token));
+
     api.defaults.headers.Authorization = `Bearer ${token}`;
     setAuthenticated(true);
-    history.push('/users');
+    history.push('/user');
   }
 
   function handleLogout() {

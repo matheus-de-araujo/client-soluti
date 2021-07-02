@@ -5,15 +5,15 @@ import {
   Route,
 } from 'react-router-dom';
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Users from './pages/Users';
+import Home from './pages/home';
+import Login from './pages/login';
+import User from './pages/user';
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/login" component={Login} />
-      <Route path="/users" component={Users} />
+      <Route path="/users" component={User} />
       <Route path="/" component={Home} />
     </Switch>
   </BrowserRouter>
