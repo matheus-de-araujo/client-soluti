@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 import { Context } from '../Context/AuthContext';
-
+import './css/login.css';
 export default function Login() {
   const { handleLogin } = useContext(Context);
 
@@ -33,8 +33,9 @@ export default function Login() {
           <Label for="password">Senha</Label>
           <Input type="password" onChange={(e) => handleSubmit(e)} id="password" value={data.password} placeholder="Digite sua Senha" />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button id="logar" >Logar</Button>
       </Form>
+      <Button id="cadastrar">Cadastrar</Button>
     </Container>
   );
 }

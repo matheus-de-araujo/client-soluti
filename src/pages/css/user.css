@@ -1,0 +1,12 @@
+#certificado {
+  background-color: chartreuse;
+  color: black;
+  margin-right: 20px;
+  border: none;
+}
+
+#sair {
+  background-color: #ff7c6f;
+  border: none;
+  color: black;
+}

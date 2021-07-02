@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 
 import api from '../api';
 import { Context } from '../Context/AuthContext';
-import { Table } from 'reactstrap';
+import { Table, Container, Button } from 'reactstrap';
+import './css/user.css';
 
 export default function User() {
   
@@ -18,7 +19,7 @@ export default function User() {
 
 
   return (
-    <>
+    <Container>
       <Table striped bordered hover variant="dark">
       <thead>
         <tr>
@@ -38,15 +39,14 @@ export default function User() {
               <td>{ user.cpf }</td>
               <td>{ user.birthday }</td>
               <td>{ user.email }</td>
-              {console.log(user.id)}
             </tr>
           );
         })}
       </tbody>
       </Table>
 
-      
-      {/* <button type="button" onClick={handleLogout}>Sair</button> */}
-    </>
+      <Button id="certificado" type="button">Cadastrar Certificado</Button>
+      <Button id="sair" type="button" onClick={handleLogout}>Sair</Button>
+    </Container>
   );
 }

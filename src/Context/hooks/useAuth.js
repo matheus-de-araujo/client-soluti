@@ -25,15 +25,23 @@ export default function useAuth() {
       email: email,
       password: password
     }
-    const data = await api.post('/login', auth);
-    const token = data.data.token;
+    await api.post('/login', auth)
+      .then(function (response) {
 
-    localStorage.setItem('token', JSON.stringify(token));
-    api.defaults.headers.Authorization = `Bearer ${token}`;
+        const token = response.data.token;
 
-    setAuthenticated(true);
+        localStorage.setItem('token', JSON.stringify(token));
+        api.defaults.headers.Authorization = `Bearer ${token}`;
+        setAuthenticated(true);
+        
+        history.push('/user');
 
-    // history.push('/user');
+      })
+      .catch(function (error) {
+        alert(error);
+        history.push('/login');
+      }
+    );
   }
 
   function handleLogout() {
