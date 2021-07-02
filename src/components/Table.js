@@ -1,39 +1,29 @@
-import React from 'react';
-import { Table } from 'reactstrap';
+import React, { Component } from 'react';
+
+// import { Table } from 'reactstrap';
 
   
-export default function Table_user () {
-  return (
-    <div>
-      <Table striped bordered hover variant="dark">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th> { this.props.user.name } </th>
-          <th>Last Name</th>
-          <th>Username</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colSpan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-      </Table>
-    </div>
-  )
+class Table_user extends Component {
+  state = { 
+    users: [] 
+  };
+
+  getUser() {
+    const Data = this.props.user[0];
+    this.setState({ users: Data });
+  }
+
+  render() {
+    const { users } = this.state;
+    console.log(users);
+
+
+    return (
+      <div>
+        {console.log(users)}
+      </div>
+    )
+  }
 }
+
+export default Table_user;
