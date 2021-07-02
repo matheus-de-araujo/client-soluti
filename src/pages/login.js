@@ -39,9 +39,9 @@ export default function Login() {
           <Label for="password">Senha</Label>
           <Input type="password" onChange={(e) => handleSubmit(e)} id="password" value={data.password} placeholder="Digite sua Senha" />
         </FormGroup>
-        <Button id="logar" >Logar</Button>
+        <Button id="button-form" type="submit" >Logar</Button>
+        <a href="/register" id="a-form">Cadastrar</a>
       </Form>
-      <Button id="register" onClick={register}>Cadastrar</Button>
     </Container>
   );
 }

@@ -25,9 +25,9 @@ export default function Register () {
           <Label for="password">Senha</Label>
           <Input type="password" onChange={(e) => handleSubmit(e)} id="password" value={data.password} placeholder="Digite sua Senha" />
         </FormGroup>
-        <Button id="logar" >Logar</Button>
+        <Button id="button-form">Cadastrar</Button>
+        <a id="a-form" href="/login" >Voltar</a>
       </Form>
-      <Button id="register">Cadastrar</Button>
     </Container>
   );
 }
