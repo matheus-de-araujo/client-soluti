@@ -12,6 +12,7 @@ export default function useAuth() {
 
     if (token) {
       api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
+      console.debug('Cache', authenticated);
       setAuthenticated(true);
     }
 
@@ -19,17 +20,19 @@ export default function useAuth() {
   }, []);
   
   async function handleLogin() {
+    
     var auth = {
       email: 'rodolfo@gmail.com',
       password: '987654321'
     }
-
-    const token = await api.post('/login', auth);
+    const data = await api.post('/login', auth);
+    const token = data.data.token;
 
     localStorage.setItem('token', JSON.stringify(token));
-
     api.defaults.headers.Authorization = `Bearer ${token}`;
+
     setAuthenticated(true);
+
     history.push('/user');
   }
 
