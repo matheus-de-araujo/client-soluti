@@ -63,10 +63,11 @@ $ npm start
 
 As seguintes tecnologias foram usadas na construção do projeto:
 
-- **Laravel**
+- **React Js**
 - **Javascript**
-- **Artisan**
-- **Composer**
+- **npm**
+- **Node**
+- **Axios**
 
 ---
 
