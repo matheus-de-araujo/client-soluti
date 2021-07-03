@@ -44,6 +44,7 @@
 ## 🚀 Como executar o projeto
 
 É preciso ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
+
 Precisa ter o [node](https://nodejs.org/en/), [npm](https://www.npmjs.com/) e [React Js](https://reactjs.org/).
 
 #### 🧭 Rodando a aplicação
