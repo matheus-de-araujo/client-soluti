@@ -41,6 +41,7 @@ export default function Login() {
         </FormGroup>
         <Button id="button-form" type="submit" >Logar</Button>
         <a href="/register" id="a-form">Cadastrar</a>
+        <a href="/" id="a-form">Voltar</a>
       </Form>
     </Container>
   );

@@ -1,0 +1,33 @@
+#a-home {
+  display:inline-block;
+  text-decoration:none;
+  padding:13px 15px 9px 15px;
+  border: none;
+  background-color:#5f5a5a;
+  color:white;
+  font:15px arial, sans-serif;
+  border-radius: 5px;
+  text-align: center;
+  
+  height: 50px;
+  width:130px;
+}
+
+#home {
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+}
+
+#home a:first-child {
+  background-color:greenyellow;
+  color: black;
+  margin-right: 20px;
+}
+
+#h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}

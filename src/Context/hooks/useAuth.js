@@ -38,7 +38,13 @@ export default function useAuth() {
 
       })
       .catch(function (error) {
-        alert('Erro: ' + error.response.data.error + ' | Status: ' + error.response.status);
+        if(!typeof response === "undefined") {
+          alert('Erro: ' + error.response.data.error + ' | Status: ' + error.response.status);
+        }
+        else {
+          alert(error);
+        }
+
         history.push('/login');
       }
     );
