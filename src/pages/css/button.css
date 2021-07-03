@@ -19,3 +19,7 @@
 
   margin-right: 20px;
 }
+
+#div a:first-child {
+  background-color:#217e9a;
+}
