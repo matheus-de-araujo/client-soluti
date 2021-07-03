@@ -12,7 +12,6 @@ export default function useAuth() {
 
     if (token) {
       api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
-      console.debug('Cache', authenticated);
       setAuthenticated(true);
     }
 
@@ -29,8 +28,11 @@ export default function useAuth() {
       .then(function (response) {
 
         const token = response.data.token;
+        const user = response.data.user;
 
+        localStorage.setItem('user', JSON.stringify(user));
         localStorage.setItem('token', JSON.stringify(token));
+
         api.defaults.headers.Authorization = `Bearer ${token}`;
         setAuthenticated(true);
         

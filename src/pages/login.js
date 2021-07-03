@@ -3,7 +3,6 @@ import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 import { Context } from '../Context/AuthContext';
 import './css/button.css';
-import history from '../history';
 
 export default function Login() {
   const { handleLogin } = useContext(Context);
@@ -22,10 +21,6 @@ export default function Login() {
   function submit(e){
     e.preventDefault();
     handleLogin(data.email, data.password);
-  }
-
-  function register() {
-    history.push('/register');
   }
 
   return(

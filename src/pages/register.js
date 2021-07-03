@@ -3,6 +3,7 @@ import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 
 import api from '../api';
 import './css/button.css';
+import history from '../history';
 
 export default function Register () {
 
@@ -31,14 +32,10 @@ export default function Register () {
     api.post('user-store', data)
       .then(function(response) {
         alert(response.data + ' | Status: ' + response.status);
+        history.push('/login');
       })
       .catch(function(error) {
-        if(!typeof response === "undefined") {
-          alert('Erro: ' + error.response.data.errorInfo[2] + ' | Status: ' + error.response.request.status);
-        }
-        else {
-          alert(error);
-        }
+        alert('Erro: ' + error.response.data.errorInfo[2] + ' | Status: ' + error.response.request.status);
       }
     );
   }
