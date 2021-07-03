@@ -95,7 +95,7 @@ export default function Register () {
         </FormGroup>
 
         <Button id="button-form">Cadastrar</Button>
-        <a id="a-form" href="/login" >Voltar</a>
+        <a id="a-form" href="/" >Voltar</a>
       </Form>
     </Container>
   );
