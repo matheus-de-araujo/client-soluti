@@ -46,6 +46,7 @@ export default function User() {
       </Table>
 
       <a id="a-form" href="/certificate" type="button">Cadastrar Certificado</a>
+      <a id="a-form" href="/show-certificate" type="button">Mostrar Certificado</a>
       <Button id="button-form" type="button" onClick={handleLogout}>Sair</Button>
     </Container>
   );

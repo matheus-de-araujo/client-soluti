@@ -8,6 +8,7 @@ import Login from './pages/login';
 import User from './pages/user';
 import Register from './pages/register';
 import Certificate from './pages/certificate';
+import ShowCertificate from './pages/showCertificate';
 
 function CustomRoute({ isPrivate, ...rest }) {
   const { loading, authenticated } = useContext(Context);
@@ -30,6 +31,7 @@ export default function Routes() {
       <CustomRoute exact path="/login" component={Login} />
       <CustomRoute exact path="/register" component={Register} />
       <CustomRoute isPrivate exact path="/certificate" component={Certificate} />
+      <CustomRoute isPrivate exact path="/show-certificate" component={ShowCertificate} />
       <CustomRoute isPrivate exact path="/user" component={User} />
     </Switch>
   );
