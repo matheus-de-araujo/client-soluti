@@ -9,7 +9,7 @@ export default function Home () {
       <h1 id="h1" > Prova Técnica - Soluti </h1>
       <div id="home" > 
         <a id="a-home" href="/login"> Login </a>
-        <a id="a-home" href="/register" > Cadastro </a>
+        <a id="a-home" href="/user" > User </a>
       </div>
     </Container>
   );

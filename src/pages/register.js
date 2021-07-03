@@ -31,7 +31,7 @@ export default function Register () {
     e.preventDefault();
     api.post('user-store', data)
       .then(function(response) {
-        alert(response.data + ' | Status: ' + response.status);
+        alert('Cadastrado com Sucesso | Status: ' + response.status);
         history.push('/login');
       })
       .catch(function(error) {

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../api';
 import { Container } from 'reactstrap';
 import './css/button.css';
+import history from '../history';
 
 export default function ShowCertificate() {
 
@@ -14,10 +15,14 @@ export default function ShowCertificate() {
 
       var user = JSON.parse(localStorage.getItem('user'));
 
-      const data = await api.get('certificate/' + user.id);
-
-      setCertificate(data.data);
-      setLoading(false);
+      const data = await api.get('certificate/' + user.id)
+        .catch(function(error) {
+          alert("Certificado não encontrado: Cadastre seu certificado");
+          history.push('/certificate');
+        });
+        
+        setCertificate(data.data);
+        setLoading(false);
     })();
   }, []);
 
