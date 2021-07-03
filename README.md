@@ -19,12 +19,12 @@
 
 
 ## :pencil: Sobre o projeto
-É uma prova técnica em Laravel para o processo seletivo da soluti - Esse projeto é uma API REST que será consumida por um Front End React que está [nesse](https://github.com/matheus-de-araujo/client-soluti) repositório.
+É uma prova técnica em Laravel para o processo seletivo da soluti - Esse projeto é um Front End em React Js que consome a API REST [desse](https://github.com/matheus-de-araujo/client-soluti) repositório.
 	 
 ## 🎯 Metas do Projeto
 - [X] Preparar o ambiente de desenvolvimento.
 
-- [X] Construir um CRUD de usuario | Arquitetura REST
+- [X] Construir um CRUD de usuario
   * Nome
   * Cpf - único
   * Telefones
@@ -34,27 +34,29 @@
   * Certificado [dados do certificado]
   * Endereço
 
-- [X]  Implementar um Sistema de Autenticação | Passport.
-- [X]  Fazer a leitura de um Certificado e salvar no Banco | PhpSecLib.
+- [X]  Criar a Tela de Login
+- [X]  Criar a Tela de Cadastro
+- [X]  Criar a Tela Home
+- [X]  Criar a Tela de cadastro de Certificado
+- [X]  Criar a Tela de visualizar os dados do Certificado
+- [X]  Comunicar com a API usando [Axios](https://www.npmjs.com/package/axios)
 
 ## 🚀 Como executar o projeto
 
-É preciso ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/), ter o Laravel, Php e Mysql instalado.
+É preciso ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
+Precisa ter o [node](https://nodejs.org/en/), [npm](https://www.npmjs.com/) e [React Js](https://reactjs.org/).
 
 #### 🧭 Rodando a aplicação
 
 ```bash
 
 # Clone este repositório
-$ git clone https://github.com/matheus-de-araujo/desafio-laravel
-$ cd desafio-laravel
-$ composer install
-$ php artisan migrate
-$ php artisan passport:install
-$ php artisan key:generate
+$ git clone https://github.com/matheus-de-araujo/client-laravel
+$ cd client-laravel
+$ npm install
+$ npm start
 
 ```
-Não se esqueça de copiar o arquivo .Env e colocar as informações relativas ao Banco de Dados da sua máquina
 
 ## 🛠 Tecnologias
 
