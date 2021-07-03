@@ -33,7 +33,12 @@ export default function Register () {
         alert(response.data + ' | Status: ' + response.status);
       })
       .catch(function(error) {
-        alert('Erro: ' + error.response.data.errorInfo[2] + ' | Status: ' + error.response.request.status);
+        if(!typeof response === "undefined") {
+          alert('Erro: ' + error.response.data.errorInfo[2] + ' | Status: ' + error.response.request.status);
+        }
+        else {
+          alert(error);
+        }
       }
     );
   }
