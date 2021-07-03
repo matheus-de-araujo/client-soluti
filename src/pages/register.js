@@ -35,7 +35,7 @@ export default function Register () {
         history.push('/login');
       })
       .catch(function(error) {
-        alert('Erro: ' + error.response.data.errorInfo[2] + ' | Status: ' + error.response.request.status);
+        alert(error);
       }
     );
   }
