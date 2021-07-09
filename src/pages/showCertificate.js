@@ -16,13 +16,16 @@ export default function ShowCertificate() {
       var user = JSON.parse(localStorage.getItem('user'));
 
       const data = await api.get('certificate/' + user.id)
+        .then(function(response) {
+          setCertificate(data.data);
+          setLoading(false);
+        })
         .catch(function(error) {
           alert("Certificado não encontrado: Cadastre seu certificado");
-          history.push('/certificate');
+          history.push('/user');
         });
         
-        setCertificate(data.data);
-        setLoading(false);
+
     })();
   }, []);
 
